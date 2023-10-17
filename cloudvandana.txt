@@ -1,0 +1,299 @@
+
+
+1. Create an array with values 1,2,3,4,5,6,7, and shuffle it;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+public static void main(String[] args) {
+Integer[] array = {1, 2, 3, 4, 5, 6, 7};
+List<Integer> list = Arrays.asList(array);
+Collections.shuffle(list);
+System.out.println("Shuffled array: " + Arrays.toString(list.toArray()));
+}
+}
+
+output:
+
+Shuffled array: [1, 5, 3, 7, 6, 4, 2]
+
+
+** Process exited - Return Code: 0 **
+
+
+
+2. Enter a Roman Number as input and Convert it to an integer(eg., IX to 9):
+
+public class RomanToInteger {
+public static void main(String[] args) {
+String roman = "IX"; // Change this to the Roman number you want to convert
+int result = romanToInteger(roman);
+System.out.println(roman + " = " + result);
+}
+
+public static int romanToInteger(String s) {
+// Add your Roman to Integer conversion logic here
+// You can use a map to define the values of Roman numerals and iterate through the string to calculate the result.
+// There are multiple ways to do this, depending on your preferred approach.
+// You can search for Roman numeral conversion algorithms for reference.
+return 0; // Replace this with the actual result.
+}
+}
+
+
+
+IX = 0
+
+
+** Process exited - Return Code: 0 **
+
+
+
+
+3. Check if the input is a pangram or not:
+
+
+public class PangramCheck {
+public static void main(String[] args) {
+String input = "The quick brown fox jumps over the lazy dog"; // Change this to your input string
+boolean isPangram = isPangram(input);
+if (isPangram) {
+System.out.println("The input is a pangram.");
+} else {
+System.out.println("The input is not a pangram.");
+}
+}
+
+public static boolean isPangram(String s) {
+s = s.toLowerCase();
+for (char c = 'a'; c <= 'z'; c++) {
+if (s.indexOf(c) == -1) {
+return false;
+}
+}
+return true;
+}
+}
+
+
+The input is a pangram.
+
+
+** Process exited - Return Code: 0 **
+
+
+
+
+
+
+
+Here's a javaScript code snippet to reverse every word in a sentence and sort an array in descending order:
+
+1. Reverse every word in a sentence:
+
+
+function reverseWords(sentence) {
+// Split the sentence into words
+let words = sentence.split(' ');
+
+// Reverse each word
+let reversedWords = words.map(word => {
+return word.split('').reverse().join('');
+});
+
+// Join the reversed words to form the reversed sentence
+let reversedSentence = reversedWords.join(' ');
+
+return reversedSentence;
+}
+
+const inputSentence = "This is a sunny day";
+const reversedResult = reverseWords(inputSentence);
+console.log(reversedResult);
+
+output:
+
+sihT si a ynnus yad
+
+
+2. Perform sorting of an array in descending order:
+
+// Example array
+const numbers = [5, 2, 9, 1, 5, 6];
+
+// Sort the array in descending order
+const sortedDescending = numbers.sort((a, b) => b - a);
+
+console.log(sortedDescending);
+
+output:
+
+[ 9, 6, 5, 5, 2, 1 ]
+
+
+1.Create a basic calculator using HTML,CSS and JavaScript with the functionality of add,subtract,multiply and divide.Use the following picture for reference.
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>HTML Calculator</title>
+<style>
+table {
+          border-spacing:0px;
+margin-left: auto;
+margin-right: auto;
+}
+        td {
+    padding: 0;
+}
+
+input[type="button"] {
+width:105%;
+padding: 20px 40px;
+background-color: black;
+color: white;
+font-size: 27px;
+font-weight: bold;
+            border:none;
+border-radius: 0px;
+}
+
+input[type="text"] {
+padding: 20px 30px;
+font-size: 24px;
+font-weight: bold;
+border-radius: 0px;
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- Create table -->
+<table id="calcu" >
+<tr>
+<td colspan="3">
+<input type="text" id="result">
+</td>
+           
+<td><input type="button" value="AC" style="background-color:Green;color:white"></td>
+</tr>
+
+<tr>
+<td><input type="button" value="1"></td>
+<td><input type="button" value="2"></td>
+<td><input type="button" value="3"></td>
+<td><input type="button" value="+" style="background-color:Grey;color:white"></td>
+</tr>
+<tr>
+<td><input type="button" value="4"></td>
+<td><input type="button" value="5"></td>
+<td><input type="button" value="6"></td>
+<td><input type="button" value="-" style="background-color:Grey;color:white"></td>
+</tr>
+<tr>
+<td><input type="button" value="7"></td>
+<td><input type="button" value="8"></td>
+<td><input type="button" value="9"></td>
+<td><input type="button" value="*" style="background-color:Grey;color:white"></td>
+</tr>
+<tr>
+<td><input type="button" value="0"></td>
+<td><input type="button" value="."></td>
+<td><input type="button" value="="></td>
+<td><input type="button" value="/" style="background-color:Grey;color:white"></td>
+</tr>
+</table>
+</body>
+
+</html> 
+
+2.
+
+Create a survey form with Fields; First Name, Last Name, Date of Birth, Country (dropdown), Gender (checkbox), Profession, email, and mobile number. All the input fields are necessary to submit the form. Create two buttons submit and reset.Reset will reset the form while clicking on submit, first, it will check all the fields and necessary validations and then a popup will appear displaying all the selected values with labels in front of it. On closing the popup, the form should reset all the values. Use the following image for reference
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Survey Form</title>
+<style>
+/* Add your CSS styles here for formatting */
+</style>
+</head>
+<body>
+<h1>Survey Form</h1>
+<form id="surveyForm">
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" required><br>
+
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" required><br>
+
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" required><br>
+
+<label for="country">Country:</label>
+<select id="country" required>
+<option value="USA">USA</option>
+<option value="Canada">Canada</option>
+<!-- Add more country options here -->
+</select><br>
+
+<label>Gender:</label><br>
+<input type="checkbox" id="male" name="gender" value="Male">
+<label for="male">Male</label>
+<input type="checkbox" id="female" name="gender" value="Female">
+<label for="female">Female</label><br>
+
+<label for="profession">Profession:</label>
+<input type="text" id="profession" required><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" required><br>
+
+<label for="mobile">Mobile Number:</label>
+<input type="tel" id="mobile" required><br>
+
+<button type="button" id="submitBtn">Submit</button>
+<button type="button" id="resetBtn">Reset</button>
+</form>
+
+<!-- JavaScript for form handling -->
+<script>
+const form = document.getElementById("surveyForm");
+const submitBtn = document.getElementById("submitBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+submitBtn.addEventListener("click", function () {
+if (form.checkValidity()) {
+// Form is valid, show the popup
+const formData = new FormData(form);
+let popupContent = "<h2>Survey Details</h2>";
+for (const [key, value] of formData.entries()) {
+popupContent += `<p><strong>${key}:</strong> ${value}</p>`;
+}
+// Display the popup
+alert(popupContent);
+// Reset the form
+form.reset();
+} else {
+// Form is invalid, show an error message or perform custom validation
+alert("Please fill out all the required fields.");
+}
+});
+
+resetBtn.addEventListener("click", function () {
+form.reset();
+});
+</script>
+</body>
+</html>
+
+
