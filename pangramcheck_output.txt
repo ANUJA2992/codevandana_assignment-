@@ -1,0 +1,4 @@
+The input is a pangram.
+
+
+** Process exited - Return Code: 0 **

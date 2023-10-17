@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Survey Form</title>
+<style>
+/* Add your CSS styles here for formatting */
+</style>
+</head>
+<body>
+<h1>Survey Form</h1>
+<form id="surveyForm">
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" required><br>
+
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" required><br>
+
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" required><br>
+
+<label for="country">Country:</label>
+<select id="country" required>
+<option value="USA">USA</option>
+<option value="Canada">Canada</option>
+<!-- Add more country options here -->
+</select><br>
+
+<label>Gender:</label><br>
+<input type="checkbox" id="male" name="gender" value="Male">
+<label for="male">Male</label>
+<input type="checkbox" id="female" name="gender" value="Female">
+<label for="female">Female</label><br>
+
+<label for="profession">Profession:</label>
+<input type="text" id="profession" required><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" required><br>
+
+<label for="mobile">Mobile Number:</label>
+<input type="tel" id="mobile" required><br>
+
+<button type="button" id="submitBtn">Submit</button>
+<button type="button" id="resetBtn">Reset</button>
+</form>
+
+<!-- JavaScript for form handling -->
+<script>
+const form = document.getElementById("surveyForm");
+const submitBtn = document.getElementById("submitBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+submitBtn.addEventListener("click", function () {
+if (form.checkValidity()) {
+// Form is valid, show the popup
+const formData = new FormData(form);
+let popupContent = "<h2>Survey Details</h2>";
+for (const [key, value] of formData.entries()) {
+popupContent += `<p><strong>${key}:</strong> ${value}</p>`;
+}
+// Display the popup
+alert(popupContent);
+// Reset the form
+form.reset();
+} else {
+// Form is invalid, show an error message or perform custom validation
+alert("Please fill out all the required fields.");
+}
+});
+
+resetBtn.addEventListener("click", function () {
+form.reset();
+});
+</script>
+</body>
+</html>
